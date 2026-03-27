@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const API = 'http://localhost:5000/api/roles';
+const API = 'https://march-27-agri-trace-frontend.vercel.app/roles';
 
 function RoleManager() {
   const [address, setAddress] = useState('');

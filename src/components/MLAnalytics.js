@@ -11,7 +11,7 @@ function MLAnalytics() {
     setError(null);
     try {
       const feats = features.split(',').map(Number);
-      const res = await axios.post('http://localhost:5000/api/ml/predict-price', { features: feats });
+      const res = await axios.post('https://march-27-agri-trace-frontend.vercel.app/ml/predict-price', { features: feats });
       setPrice(res.data.predicted_price);
     } catch (err) {
       setError(err.response?.data?.error || err.message);
@@ -22,7 +22,7 @@ function MLAnalytics() {
     setError(null);
     try {
       const feats = features.split(',').map(Number);
-      const res = await axios.post('http://localhost:5000/api/ml/detect-quality-anomaly', { features: feats });
+      const res = await axios.post('https://march-27-agri-trace-frontend.vercel.app/ml/detect-quality-anomaly', { features: feats });
       setAnomaly(res.data.anomaly);
     } catch (err) {
       setError(err.response?.data?.error || err.message);

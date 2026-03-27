@@ -13,7 +13,7 @@ function BatchMLAnalytics() {
     setPrice(null);
     setFeatures(null);
     try {
-      const res = await axios.get(`http://localhost:5000/api/ml/predict-price-for-batch/${batchId}`);
+      const res = await axios.get(`https://march-27-agri-trace-frontend.vercel.app/ml/predict-price-for-batch/${batchId}`);
       setPrice(res.data.predicted_price);
       setFeatures(res.data.features);
     } catch (err) {
@@ -26,7 +26,7 @@ function BatchMLAnalytics() {
     setAnomaly(null);
     setFeatures(null);
     try {
-      const res = await axios.get(`http://localhost:5000/api/ml/detect-quality-anomaly-for-batch/${batchId}`);
+      const res = await axios.get(`https://march-27-agri-trace-frontend.vercel.app/ml/detect-quality-anomaly-for-batch/${batchId}`);
       setAnomaly(res.data.anomaly);
       setFeatures(res.data.features);
     } catch (err) {
